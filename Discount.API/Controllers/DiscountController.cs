@@ -37,9 +37,9 @@ namespace Discount.API.Controllers
         }
 
         [HttpDelete("{productName}", Name = "DeleteDiscount")]
-        public async Task<ActionResult<bool>> DeleteDiscount(Coupon coupon)
+        public async Task<ActionResult<bool>> DeleteDiscount(string productName)
         {
-            return Ok(await _discountRepository.DeleteDiscount(coupon));
+            return Ok(await _discountRepository.DeleteDiscount(productName));
         }
     }
 }
